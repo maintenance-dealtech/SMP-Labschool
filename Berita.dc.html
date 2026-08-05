@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; overflow-wrap: break-word; background: #132347; color: #E2E8F5; font-family: 'Poppins', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #93C5FD; text-decoration: none; }
+  a:hover { color: #C4B5FD; }
+  ::selection { background: #DDD6FE; color: #1E1B4B; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div ref="{{ rootRef }}" style="background:linear-gradient(180deg,#0F1D42 0%,#1E2A6E 30%,#4C2FA8 68%,#8B2FC9 100%)">
+  <dc-import name="SiteHeader" active="berita" hint-size="100%,78px"></dc-import>
+
+  <section data-screen-label="Banner Berita" style="padding:62px 0 46px;text-align:center">
+    <div style="max-width:840px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <span style="display:inline-flex;align-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;font-size:11.5px;font-weight:500;padding:7px 16px;border-radius:999px">SMP Labschool Jakarta</span>
+      <h1 style="margin:22px 0 0;font-size:clamp(27px,5vw,44px);line-height:1.2;font-weight:700;color:#fff;letter-spacing:-.015em">Berita<br /><span style="color:#7DD3FC">SMP Labschool Jakarta</span></h1>
+      <p style="margin:18px 0 0;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.76)">Ikuti informasi terbaru, kegiatan sekolah, prestasi peserta didik, program unggulan, serta berbagai aktivitas inspiratif SMP Labschool Jakarta.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Daftar Berita" style="padding:0 0 84px">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <div data-reveal data-news-filter-bar style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px;row-gap:18px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="width:4px;height:26px;border-radius:999px;background:linear-gradient(180deg,#7DD3FC,#C4B5FD);display:block"></span>
+          <h2 style="margin:0;font-size:21px;font-weight:600;color:#fff">Berita Terbaru</h2>
+        </div>
+        <div data-filters data-filters-toggle data-active-bg="linear-gradient(135deg,#3B82F6,#7C3AED)" data-active-color="#fff" data-active-border="transparent" data-idle-bg="rgba(255,255,255,.08)" data-idle-color="rgba(255,255,255,.78)" data-idle-border="rgba(255,255,255,.18)" data-active-shadow="0 10px 24px rgba(99,102,241,.4)" style="display:flex;align-items:center;gap:9px;flex:1 1 280px;min-width:0;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px">
+          <button type="button" data-filter="semua" style="background:linear-gradient(135deg,#3B82F6,#7C3AED);color:#fff;border:1px solid transparent;font-size:12.5px;font-weight:600;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s;box-shadow:0 10px 24px rgba(99,102,241,.4)">Semua</button>
+          <button type="button" data-filter="akademik" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:500;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="background:rgba(255,255,255,.16);color:#fff">Akademik</button>
+          <button type="button" data-filter="kegiatan" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:500;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="background:rgba(255,255,255,.16);color:#fff">Kegiatan Sekolah</button>
+          <button type="button" data-filter="prestasi" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:500;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="background:rgba(255,255,255,.16);color:#fff">Prestasi</button>
+        </div>
+      </div>
+
+      <div style="display:grid;min-width:0;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px" data-grid="3">
+        <article data-news data-cat="akademik" data-reveal style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:transform .32s cubic-bezier(.22,.61,.36,1),background .32s,opacity .35s" style-hover="transform:translateY(-8px);background:rgba(255,255,255,.14)">
+          <div style="position:relative;height:190px;overflow:hidden;background:rgba(255,255,255,.06)">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)"><image-slot id="news-1" src="assets/r4c1.png" shape="rect" placeholder="Foto berita 1"></image-slot></div>
+            <span style="position:absolute;top:13px;left:13px;background:linear-gradient(135deg,#3B82F6,#7C3AED);color:#fff;font-size:10px;font-weight:600;letter-spacing:.06em;padding:6px 11px;border-radius:999px">AKADEMIK</span>
+          </div>
+          <div style="padding:20px">
+            <h3 style="margin:0;font-size:15px;line-height:1.5;font-weight:600;color:#fff;text-wrap:pretty">SMP Labschool Jakarta Raih Juara 1 Olimpiade Sains Nasional 2025</h3>
+            <p style="margin:10px 0 0;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.68)">Tim olimpiade sains sekolah kembali mengukir prestasi di tingkat nasional setelah melewati seleksi ketat di lima provinsi.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:18px">
+              <span style="font-size:11.5px;color:rgba(255,255,255,.5)">15 Mei 2025</span>
+              <a href="Artikel.dc.html?id=1" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#93C5FD">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article data-news data-cat="kegiatan" data-reveal data-reveal-delay="80" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:transform .32s cubic-bezier(.22,.61,.36,1),background .32s,opacity .35s" style-hover="transform:translateY(-8px);background:rgba(255,255,255,.14)">
+          <div style="position:relative;height:190px;overflow:hidden;background:rgba(255,255,255,.06)">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)"><image-slot id="news-2" src="assets/r5c2.png" shape="rect" placeholder="Foto berita 2"></image-slot></div>
+            <span style="position:absolute;top:13px;left:13px;background:linear-gradient(135deg,#3B82F6,#7C3AED);color:#fff;font-size:10px;font-weight:600;letter-spacing:.06em;padding:6px 11px;border-radius:999px">KEGIATAN</span>
+          </div>
+          <div style="padding:20px">
+            <h3 style="margin:0;font-size:15px;line-height:1.5;font-weight:600;color:#fff;text-wrap:pretty">Kunjungan Industri ke Museum Nasional Indonesia</h3>
+            <p style="margin:10px 0 0;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.68)">Siswa kelas VIII belajar langsung sejarah dan budaya Nusantara melalui program pembelajaran di luar kelas.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:18px">
+              <span style="font-size:11.5px;color:rgba(255,255,255,.5)">10 Mei 2025</span>
+              <a href="Artikel.dc.html?id=2" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#93C5FD">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article data-news data-cat="prestasi" data-reveal data-reveal-delay="160" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:transform .32s cubic-bezier(.22,.61,.36,1),background .32s,opacity .35s" style-hover="transform:translateY(-8px);background:rgba(255,255,255,.14)">
+          <div style="position:relative;height:190px;overflow:hidden;background:rgba(255,255,255,.06)">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)"><image-slot id="news-3" src="assets/r4c2.png" shape="rect" placeholder="Foto berita 3"></image-slot></div>
+            <span style="position:absolute;top:13px;left:13px;background:linear-gradient(135deg,#EC4899,#A855F7);color:#fff;font-size:10px;font-weight:600;letter-spacing:.06em;padding:6px 11px;border-radius:999px">PRESTASI</span>
+          </div>
+          <div style="padding:20px">
+            <h3 style="margin:0;font-size:15px;line-height:1.5;font-weight:600;color:#fff;text-wrap:pretty">Tim Robotik Labschool Borong 3 Penghargaan Internasional</h3>
+            <p style="margin:10px 0 0;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.68)">Prestasi diraih pada ajang kompetisi robotik yang diikuti oleh 24 negara dengan tema teknologi berkelanjutan.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:18px">
+              <span style="font-size:11.5px;color:rgba(255,255,255,.5)">5 Mei 2025</span>
+              <a href="Artikel.dc.html?id=3" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#93C5FD">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div data-reveal style="display:flex;align-items:center;gap:12px;margin:44px 0 28px">
+        <span style="width:4px;height:26px;border-radius:999px;background:linear-gradient(180deg,#C4B5FD,#F0ABFC);display:block"></span>
+        <h2 style="margin:0;font-size:21px;font-weight:600;color:#fff">Berita Lainnya</h2>
+      </div>
+
+      <div style="display:grid;min-width:0;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px" data-grid="3">
+        <article data-news data-cat="akademik" data-reveal style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:transform .32s cubic-bezier(.22,.61,.36,1),background .32s,opacity .35s" style-hover="transform:translateY(-8px);background:rgba(255,255,255,.14)">
+          <div style="position:relative;height:190px;overflow:hidden;background:rgba(255,255,255,.06)">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)"><image-slot id="news-4" src="assets/r2c5.png" shape="rect" placeholder="Foto berita 4"></image-slot></div>
+            <span style="position:absolute;top:13px;left:13px;background:linear-gradient(135deg,#3B82F6,#7C3AED);color:#fff;font-size:10px;font-weight:600;letter-spacing:.06em;padding:6px 11px;border-radius:999px">AKADEMIK</span>
+          </div>
+          <div style="padding:20px">
+            <h3 style="margin:0;font-size:15px;line-height:1.5;font-weight:600;color:#fff;text-wrap:pretty">Workshop Coding dan Kecerdasan Artifisial untuk Kelas IX</h3>
+            <p style="margin:10px 0 0;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.68)">Program pembekalan literasi digital bekerja sama dengan mitra kampus untuk menyiapkan siswa menghadapi teknologi baru.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:18px">
+              <span style="font-size:11.5px;color:rgba(255,255,255,.5)">28 April 2025</span>
+              <a href="Artikel.dc.html?id=4" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#93C5FD">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article data-news data-cat="kegiatan" data-reveal data-reveal-delay="80" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:transform .32s cubic-bezier(.22,.61,.36,1),background .32s,opacity .35s" style-hover="transform:translateY(-8px);background:rgba(255,255,255,.14)">
+          <div style="position:relative;height:190px;overflow:hidden;background:rgba(255,255,255,.06)">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)"><image-slot id="news-5" src="assets/r2c2.png" shape="rect" placeholder="Foto berita 5"></image-slot></div>
+            <span style="position:absolute;top:13px;left:13px;background:linear-gradient(135deg,#3B82F6,#7C3AED);color:#fff;font-size:10px;font-weight:600;letter-spacing:.06em;padding:6px 11px;border-radius:999px">KEGIATAN</span>
+          </div>
+          <div style="padding:20px">
+            <h3 style="margin:0;font-size:15px;line-height:1.5;font-weight:600;color:#fff;text-wrap:pretty">Pekan Literasi: Siswa Luncurkan Antologi Cerpen</h3>
+            <p style="margin:10px 0 0;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.68)">Karya tulis siswa dibukukan dan dipamerkan pada puncak Pekan Literasi bersama orang tua dan alumni.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:18px">
+              <span style="font-size:11.5px;color:rgba(255,255,255,.5)">22 April 2025</span>
+              <a href="Artikel.dc.html?id=5" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#93C5FD">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article data-news data-cat="prestasi" data-reveal data-reveal-delay="160" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:transform .32s cubic-bezier(.22,.61,.36,1),background .32s,opacity .35s" style-hover="transform:translateY(-8px);background:rgba(255,255,255,.14)">
+          <div style="position:relative;height:190px;overflow:hidden;background:rgba(255,255,255,.06)">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)"><image-slot id="news-6" src="assets/r3c1.png" shape="rect" placeholder="Foto berita 6"></image-slot></div>
+            <span style="position:absolute;top:13px;left:13px;background:linear-gradient(135deg,#EC4899,#A855F7);color:#fff;font-size:10px;font-weight:600;letter-spacing:.06em;padding:6px 11px;border-radius:999px">PRESTASI</span>
+          </div>
+          <div style="padding:20px">
+            <h3 style="margin:0;font-size:15px;line-height:1.5;font-weight:600;color:#fff;text-wrap:pretty">Tim Basket Putri Melangkah ke Final Liga Pelajar DKI</h3>
+            <p style="margin:10px 0 0;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.68)">Perjalanan tim basket putri berlanjut ke babak final setelah menang tipis pada laga semifinal.</p>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:18px">
+              <span style="font-size:11.5px;color:rgba(255,255,255,.5)">18 April 2025</span>
+              <a href="Artikel.dc.html?id=6" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#93C5FD">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  renderVals() { return { rootRef: this.rootRef }; }
+  componentDidMount() {
+    import('./site-interactions.js')
+      .then((m) => { this._off = m.wireAll(this.rootRef.current); })
+      .catch(() => {});
+  }
+  componentWillUnmount() { if (this._off) this._off(); }
+}
+
+</script>
+</body>
+</html>

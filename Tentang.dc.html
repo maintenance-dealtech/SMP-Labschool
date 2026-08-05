@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; overflow-wrap: break-word; background: #F7F9FF; color: #334155; font-family: 'Poppins', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #2563EB; text-decoration: none; }
+  a:hover { color: #7C3AED; }
+  ::selection { background: #DDD6FE; color: #1E1B4B; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div ref="{{ rootRef }}" style="background:#F7F9FF">
+  <dc-import name="SiteHeader" active="tentang" hint-size="100%,78px"></dc-import>
+
+  <section data-screen-label="Tentang Kami" style="background:linear-gradient(180deg,#F2F6FF 0%,#F7F9FF 100%);padding:56px 0 72px">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px);display:grid;min-width:0;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(28px,4vw,48px);align-items:center">
+      <div data-reveal>
+        <span style="display:inline-flex;align-items:center;background:linear-gradient(135deg,#3B82F6,#7C3AED);color:#fff;font-size:11.5px;font-weight:600;letter-spacing:.06em;padding:7px 16px;border-radius:999px">Tentang Kami</span>
+        <h1 style="margin:20px 0 0;font-size:clamp(25px,4.4vw,38px);line-height:1.25;font-weight:700;color:#133B6B;letter-spacing:-.015em">SMP Labschool Jakarta</h1>
+        <p style="margin:18px 0 0;font-size:14.5px;line-height:1.9;color:#64748B;max-width:520px">SMP Labschool Jakarta merupakan sekolah unggulan di bawah naungan Yayasan Pembina Universitas Negeri Jakarta yang telah berdiri sejak tahun 1976. Kami berkomitmen untuk menyelenggarakan pendidikan berkualitas yang memadukan nilai-nilai akademik, karakter, dan kepedulian sosial.</p>
+        <div style="display:grid;min-width:0;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:30px;max-width:520px">
+          <div style="background:#EEF4FF;border:1px solid #DBE7FF;border-radius:18px;padding:20px 16px;text-align:center">
+            <span style="width:38px;height:38px;margin:0 auto;border-radius:999px;background:linear-gradient(140deg,#60A5FA,#2563EB);color:#fff;display:flex;align-items:center;justify-content:center">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M8 4h8v5.4a4 4 0 0 1-8 0V4Z"></path><path d="M12 13.4V17"></path><path d="M9 20.6h6"></path></svg>
+            </span>
+            <div style="margin-top:12px;font-size:21px;font-weight:700;color:#1D4ED8">A</div>
+            <div style="margin-top:3px;font-size:11.5px;color:#64748B">Akreditasi</div>
+          </div>
+          <div style="background:#ECFDF5;border:1px solid #D1FAE5;border-radius:18px;padding:20px 16px;text-align:center">
+            <span style="width:38px;height:38px;margin:0 auto;border-radius:999px;background:linear-gradient(140deg,#34D399,#059669);color:#fff;display:flex;align-items:center;justify-content:center">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.2 19c0-3.1 2.6-5.2 5.8-5.2S14.8 15.9 14.8 19"></path><path d="M16.6 5.4a3 3 0 0 1 0 5.6"></path></svg>
+            </span>
+            <div style="margin-top:12px;font-size:21px;font-weight:700;color:#059669">1.250+</div>
+            <div style="margin-top:3px;font-size:11.5px;color:#64748B">Siswa Aktif</div>
+          </div>
+          <div style="background:#F5F3FF;border:1px solid #E9D5FF;border-radius:18px;padding:20px 16px;text-align:center">
+            <span style="width:38px;height:38px;margin:0 auto;border-radius:999px;background:linear-gradient(140deg,#C084FC,#7C3AED);color:#fff;display:flex;align-items:center;justify-content:center">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M4 5.4A2.4 2.4 0 0 1 6.4 3H20v15.4H6.4A2.4 2.4 0 0 0 4 20.8Z"></path><path d="M4 5.4v15.4"></path></svg>
+            </span>
+            <div style="margin-top:12px;font-size:21px;font-weight:700;color:#7C3AED">30+</div>
+            <div style="margin-top:3px;font-size:11.5px;color:#64748B">Ekstrakurikuler</div>
+          </div>
+        </div>
+      </div>
+      <div data-reveal data-reveal-delay="100" style="position:relative;height:clamp(240px,38vw,360px);border-radius:24px;overflow:hidden;box-shadow:0 22px 48px rgba(22,44,92,.16);background:#E4EAFB">
+        <image-slot id="hero-tentang" src="assets/r5c1.png" shape="rect" placeholder="Foto lingkungan sekolah"></image-slot>
+        <span style="position:absolute;right:16px;bottom:16px;display:inline-flex;align-items:center;gap:7px;background:#fff;color:#059669;font-size:11.5px;font-weight:600;padding:8px 13px;border-radius:999px;box-shadow:0 10px 22px rgba(22,44,92,.18);pointer-events:none">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8L3.6 9.7l5.8-.8L12 3.6Z"></path></svg>Kampus Rawamangun
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Visi Sekolah" style="background:linear-gradient(180deg,#EEF2FF 0%,#F5F3FF 100%);padding:clamp(48px,5.8vw,70px) 0">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(16px,4vw,32px);text-align:center">
+      <span data-reveal style="width:56px;height:56px;margin:0 auto;border-radius:999px;background:linear-gradient(140deg,#60A5FA,#7C3AED);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(99,102,241,.35)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="8.4"></circle><circle cx="12" cy="12" r="4.4"></circle><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"></circle></svg>
+      </span>
+      <h2 data-reveal style="margin:18px 0 0;font-size:clamp(21px,3.3vw,29px);font-weight:700;color:#2F6FD0">Visi Sekolah</h2>
+      <div data-reveal data-reveal-delay="80" style="margin-top:26px;background:rgba(255,255,255,.85);border:1px solid #E4E9FB;backdrop-filter:blur(8px);border-radius:20px;padding:26px 28px;box-shadow:0 14px 34px rgba(22,44,92,.08);display:flex;gap:16px;text-align:left">
+        <span style="flex:none;width:36px;height:36px;border-radius:999px;background:#FEF3C7;color:#D97706;display:flex;align-items:center;justify-content:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M9.4 18h5.2"></path><path d="M10 21h4"></path><path d="M12 3a5.6 5.6 0 0 1 3.2 10.2c-.6.5-.9 1.1-.9 1.8H9.7c0-.7-.3-1.3-.9-1.8A5.6 5.6 0 0 1 12 3Z"></path></svg>
+        </span>
+        <p style="margin:0;font-size:14.5px;line-height:1.9;color:#475569">Menjadi sekolah unggulan yang mencetak generasi berkarakter, berprestasi, dan berwawasan global berlandaskan nilai-nilai keimanan dan budaya bangsa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Misi Sekolah" style="background:linear-gradient(180deg,#F5F3FF 0%,#F7F9FF 100%);padding:16px 0 74px">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(16px,4vw,32px);text-align:center">
+      <span data-reveal style="width:52px;height:52px;margin:0 auto;border-radius:999px;background:linear-gradient(140deg,#34D399,#0EA5E9);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(14,165,233,.3)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3.2l7.2 3.2v5.2c0 4.3-3 7.6-7.2 9-4.2-1.4-7.2-4.7-7.2-9V6.4L12 3.2Z"></path><path d="M9 12.2l2.2 2.2 4-4.2"></path></svg>
+      </span>
+      <h2 data-reveal style="margin:18px 0 0;font-size:clamp(21px,3.3vw,29px);font-weight:700;color:#2F6FD0">Misi Sekolah</h2>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:30px;text-align:left">
+        <div data-reveal style="background:#fff;border:1px solid #EAEFFB;border-radius:16px;padding:18px 20px;box-shadow:0 10px 26px rgba(22,44,92,.07);display:flex;gap:14px;align-items:flex-start;border-bottom:3px solid #3B82F6">
+          <span style="flex:none;width:26px;height:26px;border-radius:999px;background:#EEF4FF;color:#2563EB;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">1</span>
+          <p style="margin:0;font-size:13.5px;line-height:1.8;color:#475569">Menyelenggarakan pendidikan berkualitas dan berkarakter.</p>
+        </div>
+        <div data-reveal data-reveal-delay="70" style="background:#fff;border:1px solid #EAEFFB;border-radius:16px;padding:18px 20px;box-shadow:0 10px 26px rgba(22,44,92,.07);display:flex;gap:14px;align-items:flex-start;border-bottom:3px solid #6366F1">
+          <span style="flex:none;width:26px;height:26px;border-radius:999px;background:#EEF2FF;color:#4F46E5;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">2</span>
+          <p style="margin:0;font-size:13.5px;line-height:1.8;color:#475569">Mengembangkan potensi peserta didik secara optimal.</p>
+        </div>
+        <div data-reveal data-reveal-delay="140" style="background:#fff;border:1px solid #EAEFFB;border-radius:16px;padding:18px 20px;box-shadow:0 10px 26px rgba(22,44,92,.07);display:flex;gap:14px;align-items:flex-start;border-bottom:3px solid #8B5CF6">
+          <span style="flex:none;width:26px;height:26px;border-radius:999px;background:#F5F3FF;color:#7C3AED;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">3</span>
+          <p style="margin:0;font-size:13.5px;line-height:1.8;color:#475569">Menumbuhkan budaya literasi, inovasi, dan kepedulian sosial.</p>
+        </div>
+        <div data-reveal data-reveal-delay="210" style="background:#fff;border:1px solid #EAEFFB;border-radius:16px;padding:18px 20px;box-shadow:0 10px 26px rgba(22,44,92,.07);display:flex;gap:14px;align-items:flex-start;border-bottom:3px solid #C026D3">
+          <span style="flex:none;width:26px;height:26px;border-radius:999px;background:#FDF2F8;color:#C026D3;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">4</span>
+          <p style="margin:0;font-size:13.5px;line-height:1.8;color:#475569">Membangun kolaborasi dengan berbagai pihak untuk kemajuan pendidikan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Sejarah Sekolah" style="background:#fff;padding:clamp(50px,6vw,74px) 0">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <div data-reveal style="text-align:center;margin-bottom:38px">
+        <h2 style="margin:0;font-size:clamp(21px,3.3vw,29px);font-weight:700;color:#133B6B">Sejarah &amp; Perkembangan</h2>
+        <p style="margin:11px 0 0;font-size:13.5px;color:#64748B">Perjalanan SMP Labschool Jakarta dalam memberikan pendidikan berkualitas</p>
+      </div>
+      <div style="position:relative;padding-left:56px">
+        <div style="position:absolute;left:20px;top:8px;bottom:26px;width:3px;border-radius:999px;background:linear-gradient(180deg,#3B82F6,#7C3AED,#C026D3)"></div>
+        <div data-reveal data-reveal-delay="0" style="position:relative;background:#EEF4FF;border:1px solid #DBE7FF;border-radius:18px;padding:20px 22px;box-shadow:0 10px 26px rgba(22,44,92,.07);margin-bottom:18px">
+          <span style="position:absolute;left:-56px;top:18px;width:42px;height:42px;border-radius:999px;background:linear-gradient(140deg,#60A5FA,#2563EB);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(37,99,235,.4);border:4px solid #fff">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 5.4A2.4 2.4 0 0 1 6.4 3H20v15.4H6.4A2.4 2.4 0 0 0 4 20.8Z"></path></svg>
+          </span>
+          <div style="font-size:20px;font-weight:700;color:#2563EB">1976</div>
+          <div style="margin-top:4px;font-size:15px;font-weight:600;color:#133B6B">Pendirian Sekolah</div>
+          <p style="margin:8px 0 0;font-size:13px;line-height:1.8;color:#64748B">SMP Labschool Jakarta didirikan di bawah naungan Yayasan Pembina Universitas Negeri Jakarta.</p>
+        </div>
+        <div data-reveal data-reveal-delay="80" style="position:relative;background:#ECFDF5;border:1px solid #D1FAE5;border-radius:18px;padding:20px 22px;box-shadow:0 10px 26px rgba(22,44,92,.07);margin-bottom:18px">
+          <span style="position:absolute;left:-56px;top:18px;width:42px;height:42px;border-radius:999px;background:linear-gradient(140deg,#34D399,#059669);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(5,150,105,.4);border:4px solid #fff">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 4h8v5.4a4 4 0 0 1-8 0V4Z"></path><path d="M12 13.4V17"></path><path d="M9 20.6h6"></path></svg>
+          </span>
+          <div style="font-size:20px;font-weight:700;color:#059669">1980</div>
+          <div style="margin-top:4px;font-size:15px;font-weight:600;color:#133B6B">Pengembangan Kurikulum</div>
+          <p style="margin:8px 0 0;font-size:13px;line-height:1.8;color:#64748B">Pengembangan kurikulum dan penambahan fasilitas belajar untuk mendukung kegiatan siswa.</p>
+        </div>
+        <div data-reveal data-reveal-delay="160" style="position:relative;background:#FDF2F8;border:1px solid #FBCFE8;border-radius:18px;padding:20px 22px;box-shadow:0 10px 26px rgba(22,44,92,.07);margin-bottom:18px">
+          <span style="position:absolute;left:-56px;top:18px;width:42px;height:42px;border-radius:999px;background:linear-gradient(140deg,#F472B6,#C026D3);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(192,38,211,.4);border:4px solid #fff">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="8.4"></circle><path d="M3.6 12h16.8"></path></svg>
+          </span>
+          <div style="font-size:20px;font-weight:700;color:#C026D3">2000</div>
+          <div style="margin-top:4px;font-size:15px;font-weight:600;color:#133B6B">Sekolah Rujukan</div>
+          <p style="margin:8px 0 0;font-size:13px;line-height:1.8;color:#64748B">Menjadi sekolah rujukan nasional dan mulai menjalin kerja sama internasional.</p>
+        </div>
+        <div data-reveal data-reveal-delay="240" style="position:relative;background:#FFF7ED;border:1px solid #FED7AA;border-radius:18px;padding:20px 22px;box-shadow:0 10px 26px rgba(22,44,92,.07);margin-bottom:18px">
+          <span style="position:absolute;left:-56px;top:18px;width:42px;height:42px;border-radius:999px;background:linear-gradient(140deg,#FBBF24,#F97316);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(249,115,22,.4);border:4px solid #fff">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2.6" y="4" width="18.8" height="12.6" rx="2.4"></rect><path d="M8.4 20.2h7.2"></path></svg>
+          </span>
+          <div style="font-size:20px;font-weight:700;color:#EA580C">2020</div>
+          <div style="margin-top:4px;font-size:15px;font-weight:600;color:#133B6B">Transformasi Digital</div>
+          <p style="margin:8px 0 0;font-size:13px;line-height:1.8;color:#64748B">Inovasi digital dan program unggulan berkelanjutan pada seluruh aspek pembelajaran.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sambutan" data-screen-label="Sambutan Kepala Sekolah" style="scroll-margin-top:100px;background:linear-gradient(180deg,#F7F9FF 0%,#EEF2FF 100%);padding:clamp(50px,6vw,74px) 0">
+    <div style="max-width:1060px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <div data-reveal style="text-align:center;margin-bottom:38px">
+        <h2 style="margin:0;font-size:clamp(21px,3.3vw,29px);font-weight:700;color:#133B6B">Sambutan Kepala Sekolah</h2>
+        <p style="margin:11px 0 0;font-size:13.5px;color:#64748B">Pesan dari pimpinan SMP Labschool Jakarta</p>
+      </div>
+      <div data-reveal data-reveal-delay="80" style="background:#fff;border:1px solid #EAEFFB;border-radius:24px;padding:clamp(22px,4vw,34px) clamp(20px,4vw,32px);box-shadow:0 16px 38px rgba(22,44,92,.09);display:grid;min-width:0;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px;align-items:start;border-bottom:4px solid transparent;background-image:linear-gradient(#fff,#fff),linear-gradient(90deg,#3B82F6,#C026D3);background-origin:border-box;background-clip:padding-box,border-box">
+        <div style="text-align:center">
+          <div style="height:clamp(220px,32vw,260px);border-radius:18px;overflow:hidden;background:#E4EAFB;box-shadow:0 12px 28px rgba(22,44,92,.14)">
+            <image-slot id="principal" src="assets/r2c1.png" shape="rect" placeholder="Foto Kepala Sekolah"></image-slot>
+          </div>
+          <div style="margin-top:16px;font-size:15.5px;font-weight:600;color:#1D4ED8">Dra. Hj. Mulyati, M.Pd.</div>
+          <div style="margin-top:4px;font-size:12px;color:#64748B">Kepala Sekolah</div>
+        </div>
+        <div>
+          <div style="font-size:14.5px;line-height:1.95;color:#475569">
+            <p style="margin:0">Assalamualaikum warahmatullahi wabarakatuh. Selamat datang di laman resmi SMP Labschool Jakarta. Kami bersyukur atas kepercayaan orang tua yang telah menitipkan pendidikan putra dan putrinya kepada sekolah kami.</p>
+            <p style="margin:16px 0 0">Sekolah kami berupaya menghadirkan lingkungan belajar yang aman, menyenangkan, dan menantang. Penguatan karakter berjalan bersama pencapaian akademik, sehingga siswa tumbuh menjadi pribadi yang jujur, disiplin, dan peduli terhadap sesama.</p>
+            <p style="margin:16px 0 0">Kami membuka ruang seluas-luasnya bagi orang tua untuk berdialog dan bekerja sama. Semoga setiap langkah yang kami tempuh membawa manfaat bagi siswa, keluarga, dan masyarakat.</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap">
+            <a href="Kontak.dc.html" style="display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#3B82F6,#7C3AED);color:#fff;font-size:13px;font-weight:600;padding:13px 24px;border-radius:999px;box-shadow:0 12px 26px rgba(99,102,241,.32);transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 18px 34px rgba(99,102,241,.42);color:#fff">Hubungi Kepala Sekolah
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+            </a>
+            <a href="Informasi.dc.html#ppdb" style="display:inline-flex;align-items:center;gap:9px;color:#2563EB;font-size:13px;font-weight:600;padding:12px 22px;border-radius:999px;border:1.5px solid #C7D7FE;transition:background .25s" style-hover="background:#EEF2FF">Informasi PPDB</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  renderVals() { return { rootRef: this.rootRef }; }
+  componentDidMount() {
+    import('./site-interactions.js')
+      .then((m) => { this._off = m.wireAll(this.rootRef.current); })
+      .catch(() => {});
+  }
+  componentWillUnmount() { if (this._off) this._off(); }
+}
+
+</script>
+</body>
+</html>

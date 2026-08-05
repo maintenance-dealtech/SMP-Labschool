@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; overflow-wrap: break-word; background: #132347; color: #E2E8F5; font-family: 'Poppins', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #93C5FD; text-decoration: none; }
+  a:hover { color: #C4B5FD; }
+  ::selection { background: #DDD6FE; color: #1E1B4B; }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div ref="{{ rootRef }}" style="background:linear-gradient(180deg,#0F1D42 0%,#1E2A6E 32%,#4C2FA8 70%,#8B2FC9 100%)">
+  <dc-import name="SiteHeader" active="aktivitas" hint-size="100%,78px"></dc-import>
+
+  <section data-screen-label="Banner Aktivitas" style="padding:62px 0 44px;text-align:center">
+    <div style="max-width:840px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;font-size:11.5px;font-weight:500;padding:7px 16px;border-radius:999px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M8 4h8v5.4a4 4 0 0 1-8 0V4Z"></path><path d="M12 13.4V17"></path><path d="M9 20.6h6"></path></svg>Prestasi Labschool
+      </span>
+      <h1 style="margin:22px 0 0;font-size:clamp(27px,5vw,44px);line-height:1.2;font-weight:700;color:#fff;letter-spacing:-.015em">Aktivitas &amp; Prestasi<br /><span style="color:#7DD3FC">SMP Labschool Jakarta</span></h1>
+      <p style="margin:18px 0 0;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.76)">Dokumentasi kegiatan akademik, seni, olahraga, kepramukaan, serta prestasi siswa dalam berbagai kompetisi tingkat kota, provinsi, hingga internasional.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Galeri Aktivitas" style="padding:0 0 40px">
+    <div style="max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)">
+      <div data-reveal data-filters data-active-bg="linear-gradient(135deg,#3B82F6,#7C3AED)" data-active-color="#fff" data-active-border="transparent" data-idle-bg="rgba(255,255,255,.08)" data-idle-color="rgba(255,255,255,.78)" data-idle-border="rgba(255,255,255,.18)" data-active-shadow="0 10px 24px rgba(99,102,241,.4)" style="display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:34px">
+        <button type="button" data-filter="semua" style="background:linear-gradient(135deg,#3B82F6,#7C3AED);color:#fff;border:1px solid transparent;font-size:12.5px;font-weight:600;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s;box-shadow:0 10px 24px rgba(99,102,241,.4)">Semua</button>
+        <button type="button" data-filter="akademik" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:500;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="background:rgba(255,255,255,.16);color:#fff">Akademik</button>
+        <button type="button" data-filter="seni" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:500;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="background:rgba(255,255,255,.16);color:#fff">Seni &amp; Budaya</button>
+        <button type="button" data-filter="olahraga" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:500;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="background:rgba(255,255,255,.16);color:#fff">Olahraga</button>
+        <button type="button" data-filter="pramuka" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:500;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="background:rgba(255,255,255,.16);color:#fff">Pramuka</button>
+        <button type="button" data-filter="prestasi" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);font-size:12.5px;font-weight:500;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="background:rgba(255,255,255,.16);color:#fff">Prestasi</button>
+      </div>
+
+      <div style="display:grid;min-width:0;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px" data-grid="4">
+        <figure data-gal data-cat="akademik" data-title="Praktikum Sains di Laboratorium" data-reveal style="margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),background .35s">
+          <div style="position:relative;height:210px;overflow:hidden">
+            <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-1" src="assets/r2c4.png" shape="rect" placeholder="Praktikum sains"></image-slot></div>
+            <div data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(15,29,66,0) 34%,rgba(15,29,66,.86) 100%);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-size:11.5px;font-weight:600;color:#fff">Akademik</span>
+              <button type="button" data-gal-zoom style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.38)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption style="padding:14px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.86);text-align:center">Praktikum Sains di Laboratorium</figcaption>
+        </figure>
+        <figure data-gal data-cat="pramuka" data-title="Latihan Pramuka Mingguan" data-reveal data-reveal-delay="70" style="margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),background .35s">
+          <div style="position:relative;height:210px;overflow:hidden">
+            <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-2" src="assets/r3c2.png" shape="rect" placeholder="Kegiatan pramuka"></image-slot></div>
+            <div data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(15,29,66,0) 34%,rgba(15,29,66,.86) 100%);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-size:11.5px;font-weight:600;color:#fff">Pramuka</span>
+              <button type="button" data-gal-zoom style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.38)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption style="padding:14px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.86);text-align:center">Latihan Pramuka Mingguan</figcaption>
+        </figure>
+        <figure data-gal data-cat="olahraga" data-title="Turnamen Basket Antarkelas" data-reveal data-reveal-delay="140" style="margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),background .35s">
+          <div style="position:relative;height:210px;overflow:hidden">
+            <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-3" src="assets/r3c1.png" shape="rect" placeholder="Kegiatan olahraga"></image-slot></div>
+            <div data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(15,29,66,0) 34%,rgba(15,29,66,.86) 100%);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-size:11.5px;font-weight:600;color:#fff">Olahraga</span>
+              <button type="button" data-gal-zoom style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.38)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption style="padding:14px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.86);text-align:center">Turnamen Basket Antarkelas</figcaption>
+        </figure>
+        <figure data-gal data-cat="seni" data-title="Pentas Seni Tari Tradisional" data-reveal data-reveal-delay="210" style="margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),background .35s">
+          <div style="position:relative;height:210px;overflow:hidden">
+            <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-4" src="assets/r3c3.png" shape="rect" placeholder="Pentas seni"></image-slot></div>
+            <div data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(15,29,66,0) 34%,rgba(15,29,66,.86) 100%);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-size:11.5px;font-weight:600;color:#fff">Seni &amp; Budaya</span>
+              <button type="button" data-gal-zoom style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.38)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption style="padding:14px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.86);text-align:center">Pentas Seni Tari Tradisional</figcaption>
+        </figure>
+        <figure data-gal data-cat="seni" data-title="Ekstrakurikuler Orkestra Sekolah" data-reveal style="margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),background .35s">
+          <div style="position:relative;height:210px;overflow:hidden">
+            <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-5" src="assets/r3c4.png" shape="rect" placeholder="Orkestra sekolah"></image-slot></div>
+            <div data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(15,29,66,0) 34%,rgba(15,29,66,.86) 100%);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-size:11.5px;font-weight:600;color:#fff">Seni &amp; Budaya</span>
+              <button type="button" data-gal-zoom style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.38)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption style="padding:14px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.86);text-align:center">Ekstrakurikuler Orkestra Sekolah</figcaption>
+        </figure>
+        <figure data-gal data-cat="prestasi" data-title="Juara 1 Kompetisi Robotik Nasional" data-reveal data-reveal-delay="70" style="margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),background .35s">
+          <div style="position:relative;height:210px;overflow:hidden">
+            <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-6" src="assets/r4c2.png" shape="rect" placeholder="Penerimaan penghargaan"></image-slot></div>
+            <span style="position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#FBBF24,#F97316);color:#fff;font-size:10px;font-weight:600;letter-spacing:.05em;padding:6px 10px;border-radius:999px">JUARA 1</span>
+            <div data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(15,29,66,0) 34%,rgba(15,29,66,.86) 100%);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-size:11.5px;font-weight:600;color:#fff">Prestasi Nasional</span>
+              <button type="button" data-gal-zoom style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.38)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption style="padding:14px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.86);text-align:center">Juara 1 Kompetisi Robotik Nasional</figcaption>
+        </figure>
+        <figure data-gal data-cat="akademik" data-title="Literasi di Perpustakaan" data-reveal data-reveal-delay="140" style="margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),background .35s">
+          <div style="position:relative;height:210px;overflow:hidden">
+            <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-7" src="assets/r2c3.png" shape="rect" placeholder="Perpustakaan"></image-slot></div>
+            <div data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(15,29,66,0) 34%,rgba(15,29,66,.86) 100%);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-size:11.5px;font-weight:600;color:#fff">Akademik</span>
+              <button type="button" data-gal-zoom style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.38)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption style="padding:14px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.86);text-align:center">Literasi di Perpustakaan</figcaption>
+        </figure>
+        <figure data-gal data-cat="prestasi" data-title="International Mathematics Olympiad" data-reveal data-reveal-delay="210" style="margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);border-radius:20px;overflow:hidden;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),background .35s">
+          <div style="position:relative;height:210px;overflow:hidden">
+            <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-8" src="assets/r4c1.png" shape="rect" placeholder="Olimpiade internasional"></image-slot></div>
+            <span style="position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#FBBF24,#F97316);color:#fff;font-size:10px;font-weight:600;letter-spacing:.05em;padding:6px 10px;border-radius:999px">MEDALI EMAS</span>
+            <div data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(15,29,66,0) 34%,rgba(15,29,66,.86) 100%);display:flex;align-items:flex-end;padding:14px">
+              <span style="font-size:11.5px;font-weight:600;color:#fff">Prestasi Internasional</span>
+              <button type="button" data-gal-zoom style="position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.22);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.38)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption style="padding:14px 16px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.86);text-align:center">International Mathematics Olympiad</figcaption>
+        </figure>
+      </div>
+
+      <div data-reveal style="display:flex;justify-content:center;margin-top:44px">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#EC4899,#A855F7);color:#fff;font-size:13.5px;font-weight:600;padding:15px 30px;border-radius:999px;box-shadow:0 16px 34px rgba(192,38,211,.4);transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 22px 44px rgba(192,38,211,.5);color:#fff">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.1" cy="6.9" r="1.15" fill="currentColor" stroke="none"></circle></svg>Kunjungi Instagram Resmi
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div data-lightbox style="position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(8,14,40,.9);backdrop-filter:blur(8px);padding:48px">
+    <button type="button" data-lightbox-close style="position:absolute;top:26px;right:30px;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.14);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s" style-hover="background:rgba(255,255,255,.28)">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12"></path><path d="M18 6 6 18"></path></svg>
+    </button>
+    <figure style="margin:0;max-width:1020px;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px">
+      <img data-lightbox-img alt="" style="max-width:100%;max-height:74vh;border-radius:18px;display:none;box-shadow:0 30px 80px rgba(0,0,0,.55)" />
+      <div data-lightbox-empty style="display:none;width:100%;max-width:640px;aspect-ratio:16/10;border-radius:18px;border:1.5px dashed rgba(255,255,255,.34);color:rgba(255,255,255,.7);font-size:14px;align-items:center;justify-content:center;text-align:center;padding:24px">Foto belum diunggah. Tutup lightbox, lalu tarik foto ke kartu galeri untuk mengisinya.</div>
+      <figcaption data-lightbox-cap style="font-size:14.5px;font-weight:600;color:#fff;text-align:center"></figcaption>
+    </figure>
+  </div>
+
+  <dc-import name="SiteFooter" hint-size="100%,440px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  renderVals() { return { rootRef: this.rootRef }; }
+  componentDidMount() {
+    import('./site-interactions.js')
+      .then((m) => { this._off = m.wireAll(this.rootRef.current); })
+      .catch(() => {});
+  }
+  componentWillUnmount() { if (this._off) this._off(); }
+}
+
+</script>
+</body>
+</html>

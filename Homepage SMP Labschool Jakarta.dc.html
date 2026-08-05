@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #F7F9FC; color: #1F2937; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #0B5ED7; text-decoration: none; }
+  a:hover { color: #2F80ED; }
+  input, textarea, button, select { font-family: inherit; }
+  ::selection { background: #FFC83D; color: #1F2937; }
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div ref="{{ rootRef }}" style="background:#F7F9FC">
+
+  <header data-nav-root data-screen-label="Header" style="position:sticky;top:0;z-index:120">
+    <sc-if value="{{ showUtilityBar }}" hint-placeholder-val="{{ true }}">
+      <div style="background:linear-gradient(90deg,#062B62 0%,#0B4AA8 55%,#0B5ED7 100%);color:rgba(255,255,255,.92)">
+        <div style="max-width:1224px;margin:0 auto;padding:0 32px;height:44px;display:flex;align-items:center;justify-content:space-between">
+          <nav style="display:flex;align-items:center;gap:14px;font-size:12.5px;font-weight:500;letter-spacing:.01em">
+            <a href="#kontak" style="color:rgba(255,255,255,.9)" style-hover="color:#FFC83D">Pendaftaran</a>
+            <span style="opacity:.35">|</span>
+            <a href="#kontak" style="color:rgba(255,255,255,.9)" style-hover="color:#FFC83D">Portal Orang Tua</a>
+            <span style="opacity:.35">|</span>
+            <a href="#kontak" style="color:rgba(255,255,255,.9)" style-hover="color:#FFC83D">E-Learning</a>
+            <span style="opacity:.35">|</span>
+            <a href="#kontak" style="color:rgba(255,255,255,.9)" style-hover="color:#FFC83D">Alumni</a>
+          </nav>
+          <div style="display:flex;align-items:center;gap:10px">
+            <a href="#kontak" aria-label="Instagram" style="color:rgba(255,255,255,.85);display:flex" style-hover="color:#FFC83D">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.1" cy="6.9" r="1.15" fill="currentColor" stroke="none"></circle></svg>
+            </a>
+            <a href="#kontak" aria-label="YouTube" style="color:rgba(255,255,255,.85);display:flex" style-hover="color:#FFC83D">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.6 9.4l5.1 2.6-5.1 2.6V9.4Z" fill="currentColor" stroke="none"></path></svg>
+            </a>
+            <a href="#kontak" aria-label="Facebook" style="color:rgba(255,255,255,.85);display:flex" style-hover="color:#FFC83D">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.9 21v-7.6h2.6l.4-3h-3V8.6c0-.9.3-1.4 1.6-1.4h1.5V4.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8.2v3h2.4V21h3.3Z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <div data-nav-bar style="background:#fff;border-bottom:1px solid #EAEFF7;transition:box-shadow .3s ease">
+      <div style="max-width:1224px;margin:0 auto;padding:0 32px;height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+        <a href="#beranda" style="display:flex;align-items:center;gap:12px;color:#0B5ED7">
+          <image-slot id="logo-emblem" shape="circle" style="width:44px;height:44px;flex:none" placeholder="Logo"></image-slot>
+          <span style="display:flex;flex-direction:column;line-height:1.05">
+            <span style="font-size:16.5px;font-weight:800;letter-spacing:.005em;color:#0B5ED7">SMP LABSCHOOL</span>
+            <span style="font-size:10.5px;font-weight:700;letter-spacing:.34em;color:#6B7280;margin-top:3px">JAKARTA</span>
+          </span>
+        </a>
+        <nav data-navlinks style="display:flex;align-items:center;gap:34px">
+          <a href="#beranda" data-navlink="beranda" style="position:relative;font-size:14.5px;font-weight:600;color:#0B5ED7;padding:6px 1px;background-image:linear-gradient(#0B5ED7,#0B5ED7);background-repeat:no-repeat;background-position:0 100%;background-size:100% 2.5px;transition:background-size .32s cubic-bezier(.22,.61,.36,1),color .2s">Beranda</a>
+          <a href="#tentang" data-navlink="tentang" style="position:relative;font-size:14.5px;font-weight:600;color:#1F2937;padding:6px 1px;background-image:linear-gradient(#0B5ED7,#0B5ED7);background-repeat:no-repeat;background-position:0 100%;background-size:0% 2.5px;transition:background-size .32s cubic-bezier(.22,.61,.36,1),color .2s" style-hover="color:#0B5ED7;background-size:100% 2.5px">Tentang</a>
+          <a href="#berita" data-navlink="berita" style="position:relative;font-size:14.5px;font-weight:600;color:#1F2937;padding:6px 1px;background-image:linear-gradient(#0B5ED7,#0B5ED7);background-repeat:no-repeat;background-position:0 100%;background-size:0% 2.5px;transition:background-size .32s cubic-bezier(.22,.61,.36,1),color .2s" style-hover="color:#0B5ED7;background-size:100% 2.5px">Berita</a>
+          <a href="#aktivitas" data-navlink="aktivitas" style="position:relative;font-size:14.5px;font-weight:600;color:#1F2937;padding:6px 1px;background-image:linear-gradient(#0B5ED7,#0B5ED7);background-repeat:no-repeat;background-position:0 100%;background-size:0% 2.5px;transition:background-size .32s cubic-bezier(.22,.61,.36,1),color .2s" style-hover="color:#0B5ED7;background-size:100% 2.5px">Aktivitas dan Prestasi</a>
+          <a href="#kontak" data-navlink="kontak" style="position:relative;font-size:14.5px;font-weight:600;color:#1F2937;padding:6px 1px;background-image:linear-gradient(#0B5ED7,#0B5ED7);background-repeat:no-repeat;background-position:0 100%;background-size:0% 2.5px;transition:background-size .32s cubic-bezier(.22,.61,.36,1),color .2s" style-hover="color:#0B5ED7;background-size:100% 2.5px">Kontak</a>
+        </nav>
+        <a href="#kontak" style="flex:none;background:linear-gradient(135deg,#0B5ED7 0%,#2F80ED 100%);color:#fff;font-size:13.5px;font-weight:700;letter-spacing:.01em;padding:15px 28px;border-radius:12px;box-shadow:0 10px 24px rgba(11,94,215,.3);transition:transform .25s cubic-bezier(.22,.61,.36,1),box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 16px 32px rgba(11,94,215,.4);color:#fff">PPDB 2025/2026</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="beranda" data-screen-label="Hero" style="position:relative;background:#0B5ED7;overflow:hidden">
+    <div style="position:relative;height:716px">
+      <div style="position:absolute;inset:0">
+        <image-slot id="hero-building" shape="rect" placeholder="Foto gedung sekolah modern (landscape, 1440×720)"></image-slot>
+      </div>
+      <div data-hero-overlay style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(101deg,#0A50BC 0%,rgba(11,94,215,.96) 32%,rgba(11,94,215,.72) 52%,rgba(10,58,140,.34) 74%,rgba(10,58,140,.16) 100%)"></div>
+      <div style="position:absolute;right:0;top:0;bottom:0;width:54%;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 18%,#000 42%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 18%,#000 42%)">
+        <image-slot id="hero-teacher" shape="rect" placeholder="Foto guru sedang membimbing siswa"></image-slot>
+      </div>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,.28) 0%,rgba(6,32,74,0) 26%)"></div>
+
+      <div style="position:absolute;left:0;right:0;top:0;bottom:0">
+        <div style="max-width:1224px;margin:0 auto;padding:0 32px;height:100%;display:flex;flex-direction:column;justify-content:center">
+          <div style="max-width:560px;padding-bottom:96px">
+            <div style="display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);backdrop-filter:blur(8px);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.16em;padding:8px 15px;border-radius:999px;margin-bottom:26px">
+              <span style="width:6px;height:6px;border-radius:999px;background:#FFC83D;display:block"></span>SEKOLAH UNGGULAN SEJAK 1976
+            </div>
+            <h1 style="margin:0;font-size:50px;line-height:1.14;font-weight:800;color:#fff;letter-spacing:-.022em;text-wrap:pretty;text-shadow:0 4px 24px rgba(4,26,64,.28)">Membentuk Generasi Berkarakter, Berprestasi, dan Berwawasan Global</h1>
+            <p style="margin:22px 0 0;font-size:16.5px;line-height:1.78;font-weight:400;color:rgba(255,255,255,.88);max-width:470px">SMP Labschool Jakarta hadir sebagai sekolah unggulan yang berkomitmen mencetak generasi muda yang siap menghadapi masa depan.</p>
+            <div style="display:flex;align-items:center;gap:14px;margin-top:34px">
+              <a href="#tentang" style="display:inline-flex;align-items:center;gap:10px;background:#FFC83D;color:#1F2937;font-size:14.5px;font-weight:700;padding:16px 28px;border-radius:14px;box-shadow:0 14px 30px rgba(255,200,61,.32);transition:transform .25s cubic-bezier(.22,.61,.36,1),box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px rgba(255,200,61,.44);color:#1F2937">Kenali Kami Lebih Dekat
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+              <a href="#kontak" style="display:inline-flex;align-items:center;gap:10px;color:#fff;font-size:14.5px;font-weight:700;padding:15px 26px;border-radius:14px;border:1.5px solid rgba(255,255,255,.5);background:rgba(255,255,255,.08);backdrop-filter:blur(6px);transition:background .25s,border-color .25s,transform .25s" style-hover="background:rgba(255,255,255,.2);border-color:#fff;transform:translateY(-3px);color:#fff">Daftar PPDB</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <svg viewBox="0 0 1440 130" preserveAspectRatio="none" style="position:absolute;left:0;right:0;bottom:-1px;width:100%;height:130px;display:block;z-index:3;pointer-events:none">
+        <path d="M0,78 C210,126 400,104 700,72 C1010,39 1220,18 1440,44 L1440,131 L0,131 Z" fill="#F7F9FC"></path>
+      </svg>
+
+      <div style="position:absolute;left:0;right:0;bottom:34px;z-index:4">
+        <div style="max-width:1224px;margin:0 auto;padding:0 32px;display:flex;gap:18px">
+          <div data-stat style="flex:0 0 236px;background:#fff;border:1px solid rgba(255,255,255,.9);border-radius:18px;padding:17px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 16px 34px rgba(8,45,110,.16);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s" style-hover="transform:translateY(-8px);box-shadow:0 26px 48px rgba(8,45,110,.24)">
+            <span style="flex:none;width:46px;height:46px;border-radius:13px;background:#EDF3FF;color:#0B5ED7;display:flex;align-items:center;justify-content:center">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="3.4"></circle><path d="M3 19.2c0-3.2 2.7-5.4 6-5.4s6 2.2 6 5.4"></path><path d="M16.4 5.3a3.2 3.2 0 0 1 0 5.9"></path><path d="M17.2 14c2.3.6 3.8 2.5 3.8 5.2"></path></svg>
+            </span>
+            <span style="display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:25px;font-weight:800;letter-spacing:-.02em;color:#1F2937;line-height:1.1">1.250+</span>
+              <span style="font-size:12.5px;font-weight:500;color:#6B7280">Siswa Aktif</span>
+            </span>
+          </div>
+          <div data-stat style="flex:0 0 236px;background:#fff;border:1px solid rgba(255,255,255,.9);border-radius:18px;padding:17px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 16px 34px rgba(8,45,110,.16);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s" style-hover="transform:translateY(-8px);box-shadow:0 26px 48px rgba(8,45,110,.24)">
+            <span style="flex:none;width:46px;height:46px;border-radius:13px;background:#EDF3FF;color:#0B5ED7;display:flex;align-items:center;justify-content:center">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="10.6" rx="2.2"></rect><circle cx="12" cy="17.4" r="1.9"></circle><path d="M8.2 21.5c0-2 1.7-3 3.8-3s3.8 1 3.8 3"></path></svg>
+            </span>
+            <span style="display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:25px;font-weight:800;letter-spacing:-.02em;color:#1F2937;line-height:1.1">120+</span>
+              <span style="font-size:12.5px;font-weight:500;color:#6B7280">Guru Profesional</span>
+            </span>
+          </div>
+          <div data-stat style="flex:0 0 236px;background:#fff;border:1px solid rgba(255,255,255,.9);border-radius:18px;padding:17px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 16px 34px rgba(8,45,110,.16);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s" style-hover="transform:translateY(-8px);box-shadow:0 26px 48px rgba(8,45,110,.24)">
+            <span style="flex:none;width:46px;height:46px;border-radius:13px;background:#EDF3FF;color:#0B5ED7;display:flex;align-items:center;justify-content:center">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M8 4h8v5.4a4 4 0 0 1-8 0V4Z"></path><path d="M8 5.6H5.2a3 3 0 0 0 2.9 3"></path><path d="M16 5.6h2.8a3 3 0 0 1-2.9 3"></path><path d="M12 13.4V17"></path><path d="M9 20.6h6"></path><path d="M10.4 17h3.2"></path></svg>
+            </span>
+            <span style="display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:25px;font-weight:800;letter-spacing:-.02em;color:#1F2937;line-height:1.1">250+</span>
+              <span style="font-size:12.5px;font-weight:500;color:#6B7280">Prestasi Diraih</span>
+            </span>
+          </div>
+          <div data-stat style="flex:0 0 236px;background:#fff;border:1px solid rgba(255,255,255,.9);border-radius:18px;padding:17px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 16px 34px rgba(8,45,110,.16);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s" style-hover="transform:translateY(-8px);box-shadow:0 26px 48px rgba(8,45,110,.24)">
+            <span style="flex:none;width:46px;height:46px;border-radius:13px;background:#EDF3FF;color:#0B5ED7;display:flex;align-items:center;justify-content:center">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="8.4"></circle><circle cx="12" cy="12" r="4.4"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+            </span>
+            <span style="display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:25px;font-weight:800;letter-spacing:-.02em;color:#1F2937;line-height:1.1">30+</span>
+              <span style="font-size:12.5px;font-weight:500;color:#6B7280">Ekstrakurikuler</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang" data-section data-screen-label="Tentang Sekolah" style="scroll-margin-top:150px;padding:88px 0 0">
+    <div style="max-width:1224px;margin:0 auto;padding:0 32px">
+      <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:22px;align-items:start">
+        <div data-reveal style="grid-column:span 3">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <span style="width:28px;height:2.5px;background:#FFC83D;display:block;border-radius:2px"></span>
+            <span style="font-size:12.5px;font-weight:800;letter-spacing:.15em;color:#2F80ED">TENTANG KAMI</span>
+          </div>
+          <h2 style="margin:0;font-size:33px;line-height:1.2;font-weight:800;letter-spacing:-.025em;color:#1F2937;text-wrap:pretty">SMP Labschool Jakarta</h2>
+          <p style="margin:20px 0 0;font-size:14.5px;line-height:1.85;color:#6B7280">SMP Labschool Jakarta merupakan sekolah unggulan di bawah naungan Yayasan Pembina Universitas Negeri Jakarta yang telah berdiri sejak tahun 1976. Kami berkomitmen untuk menyelenggarakan pendidikan berkualitas yang memadukan nilai-nilai akademik, karakter, dan kepedulian sosial.</p>
+          <a href="#berita" style="display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:linear-gradient(135deg,#0B5ED7,#2F80ED);color:#fff;font-size:13.5px;font-weight:700;padding:14px 24px;border-radius:12px;box-shadow:0 10px 22px rgba(11,94,215,.26);transition:transform .25s cubic-bezier(.22,.61,.36,1),box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 16px 30px rgba(11,94,215,.36);color:#fff">Selengkapnya
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+          </a>
+        </div>
+
+        <div data-reveal data-reveal-delay="90" style="grid-column:span 3;margin-top:52px;position:relative;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#2F80ED,#0B5ED7);box-shadow:0 22px 48px rgba(8,45,110,.2);aspect-ratio:1/1.28">
+          <div style="position:absolute;inset:0">
+            <image-slot id="principal" shape="rect" placeholder="Foto Kepala Sekolah (portrait)"></image-slot>
+          </div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(180deg,rgba(9,45,110,0) 0%,rgba(9,45,110,.55) 32%,rgba(8,40,100,.94) 100%);pointer-events:none">
+            <div style="font-size:11.5px;font-weight:600;letter-spacing:.09em;color:rgba(255,255,255,.78);text-transform:uppercase">Kepala Sekolah</div>
+            <div style="font-size:17px;font-weight:800;color:#fff;margin-top:5px;letter-spacing:-.01em">Dra. Hj. Mulyati, M.Pd.</div>
+            <a href="#tentang" style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);color:#fff;font-size:12.5px;font-weight:600;padding:11px 14px;border-radius:12px;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.3);color:#fff">Sambutan Kepala Sekolah
+              <span style="flex:none;width:24px;height:24px;border-radius:999px;background:#FFC83D;color:#1F2937;display:flex;align-items:center;justify-content:center">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h13"></path><path d="M12.5 6.5 18 12l-5.5 5.5"></path></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div data-reveal data-reveal-delay="170" style="grid-column:span 3;background:#fff;border:1px solid #E9EFF8;border-radius:22px;padding:26px 24px 30px;box-shadow:0 14px 34px rgba(8,45,110,.07);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 24px 48px rgba(8,45,110,.14)">
+          <span style="width:52px;height:52px;border-radius:16px;background:linear-gradient(140deg,#2F80ED,#0B5ED7);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(11,94,215,.28)">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M2.6 12S6.1 6.3 12 6.3 21.4 12 21.4 12 17.9 17.7 12 17.7 2.6 12 2.6 12Z"></path><circle cx="12" cy="12" r="3.1"></circle></svg>
+          </span>
+          <h3 style="margin:22px 0 0;font-size:19px;font-weight:800;letter-spacing:-.015em;color:#1F2937">Visi</h3>
+          <p style="margin:12px 0 0;font-size:13.5px;line-height:1.82;color:#6B7280">Menjadi sekolah unggulan yang mencetak generasi berkarakter, berprestasi, dan berwawasan global berlandaskan nilai-nilai keimanan dan budaya bangsa.</p>
+        </div>
+
+        <div data-reveal data-reveal-delay="250" style="grid-column:span 3;background:#fff;border:1px solid #E9EFF8;border-radius:22px;padding:26px 24px 30px;box-shadow:0 14px 34px rgba(8,45,110,.07);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s" style-hover="transform:translateY(-6px);box-shadow:0 24px 48px rgba(8,45,110,.14)">
+          <span style="width:52px;height:52px;border-radius:16px;background:linear-gradient(140deg,#2F80ED,#0B5ED7);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(11,94,215,.28)">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><circle cx="12" cy="12" r="8.4"></circle><circle cx="12" cy="12" r="4.4"></circle><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"></circle></svg>
+          </span>
+          <h3 style="margin:22px 0 0;font-size:19px;font-weight:800;letter-spacing:-.015em;color:#1F2937">Misi</h3>
+          <ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px">
+            <li style="display:flex;gap:10px;font-size:13.5px;line-height:1.7;color:#6B7280"><span style="flex:none;width:6px;height:6px;border-radius:999px;background:#0B5ED7;margin-top:7px"></span>Menyelenggarakan pendidikan berkualitas dan berkarakter.</li>
+            <li style="display:flex;gap:10px;font-size:13.5px;line-height:1.7;color:#6B7280"><span style="flex:none;width:6px;height:6px;border-radius:999px;background:#0B5ED7;margin-top:7px"></span>Mengembangkan potensi peserta didik secara optimal.</li>
+            <li style="display:flex;gap:10px;font-size:13.5px;line-height:1.7;color:#6B7280"><span style="flex:none;width:6px;height:6px;border-radius:999px;background:#0B5ED7;margin-top:7px"></span>Menumbuhkan budaya literasi, inovasi, dan kepedulian sosial.</li>
+            <li style="display:flex;gap:10px;font-size:13.5px;line-height:1.7;color:#6B7280"><span style="flex:none;width:6px;height:6px;border-radius:999px;background:#0B5ED7;margin-top:7px"></span>Membangun kolaborasi dengan berbagai pihak untuk kemajuan pendidikan.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-section data-screen-label="Sejarah Sekolah" style="padding:76px 0 0">
+    <div style="max-width:1224px;margin:0 auto;padding:0 32px">
+      <div style="display:grid;grid-template-columns:288px 1fr;gap:44px;align-items:start">
+        <div data-reveal style="background:#EEF3FA;border:1px solid #E4EBF6;border-radius:20px;padding:26px 24px">
+          <h3 style="margin:0;font-size:17.5px;font-weight:800;letter-spacing:-.015em;color:#1F2937">Sejarah Singkat</h3>
+          <p style="margin:12px 0 0;font-size:13.5px;line-height:1.8;color:#6B7280">SMP Labschool Jakarta telah melalui perjalanan panjang dalam dunia pendidikan dan terus berkembang menjadi sekolah unggulan.</p>
+          <a href="#tentang" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:13px;font-weight:700;color:#0B5ED7">Lihat Selengkapnya
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+          </a>
+        </div>
+        <div style="position:relative;padding-top:34px">
+          <div style="position:absolute;left:0;right:0;top:44px;height:2px;background:linear-gradient(90deg,#CFE0F8,#0B5ED7 45%,#CFE0F8)"></div>
+          <div style="position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:26px">
+            <div data-reveal data-reveal-delay="60">
+              <span style="display:block;width:21px;height:21px;border-radius:999px;background:#fff;border:5px solid #0B5ED7;box-shadow:0 0 0 5px rgba(11,94,215,.12);margin-bottom:26px"></span>
+              <div style="font-size:23px;font-weight:800;color:#0B5ED7;letter-spacing:-.02em">1976</div>
+              <p style="margin:9px 0 0;font-size:13.5px;line-height:1.7;color:#6B7280;max-width:210px">SMP Labschool Jakarta didirikan</p>
+            </div>
+            <div data-reveal data-reveal-delay="150">
+              <span style="display:block;width:21px;height:21px;border-radius:999px;background:#fff;border:5px solid #0B5ED7;box-shadow:0 0 0 5px rgba(11,94,215,.12);margin-bottom:26px"></span>
+              <div style="font-size:23px;font-weight:800;color:#0B5ED7;letter-spacing:-.02em">1980</div>
+              <p style="margin:9px 0 0;font-size:13.5px;line-height:1.7;color:#6B7280;max-width:210px">Pengembangan kurikulum dan fasilitas belajar</p>
+            </div>
+            <div data-reveal data-reveal-delay="240">
+              <span style="display:block;width:21px;height:21px;border-radius:999px;background:#fff;border:5px solid #0B5ED7;box-shadow:0 0 0 5px rgba(11,94,215,.12);margin-bottom:26px"></span>
+              <div style="font-size:23px;font-weight:800;color:#0B5ED7;letter-spacing:-.02em">2000</div>
+              <p style="margin:9px 0 0;font-size:13.5px;line-height:1.7;color:#6B7280;max-width:210px">Sekolah rujukan nasional dan internasional</p>
+            </div>
+            <div data-reveal data-reveal-delay="330">
+              <span style="display:block;width:21px;height:21px;border-radius:999px;background:#fff;border:5px solid #0B5ED7;box-shadow:0 0 0 5px rgba(11,94,215,.12);margin-bottom:26px"></span>
+              <div style="font-size:23px;font-weight:800;color:#0B5ED7;letter-spacing:-.02em">2020</div>
+              <p style="margin:9px 0 0;font-size:13.5px;line-height:1.7;color:#6B7280;max-width:210px">Inovasi digital dan program unggulan berkelanjutan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="berita" data-section data-screen-label="Berita Terbaru" style="scroll-margin-top:150px;padding:92px 0 0">
+    <div style="max-width:1224px;margin:0 auto;padding:0 32px">
+      <div data-reveal style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="width:28px;height:2.5px;background:#FFC83D;display:block;border-radius:2px"></span>
+            <span style="font-size:12.5px;font-weight:800;letter-spacing:.15em;color:#2F80ED">BERITA TERBARU</span>
+          </div>
+          <h2 style="margin:12px 0 0;font-size:30px;font-weight:800;letter-spacing:-.025em;color:#1F2937">Berita Terbaru</h2>
+        </div>
+        <a href="#berita" style="display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#0B5ED7;padding-bottom:6px">Lihat Semua Berita
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+        </a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+        <article data-news data-reveal data-reveal-delay="60" style="background:#fff;border:1px solid #E9EFF8;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(8,45,110,.07);transition:transform .32s cubic-bezier(.22,.61,.36,1),box-shadow .32s" style-hover="transform:translateY(-8px);box-shadow:0 28px 54px rgba(8,45,110,.16)">
+          <div style="position:relative;height:212px;overflow:hidden;background:#DFE8F6">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)">
+              <image-slot id="news-1" shape="rect" placeholder="Foto berita 1"></image-slot>
+            </div>
+          </div>
+          <div style="padding:22px 22px 20px">
+            <span style="display:inline-flex;align-items:center;background:#0B5ED7;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.1em;padding:7px 12px;border-radius:8px">AKADEMIK</span>
+            <h3 style="margin:15px 0 0;font-size:17px;line-height:1.42;font-weight:800;letter-spacing:-.015em;color:#1F2937;text-wrap:pretty">SMP Labschool Jakarta Raih Juara 1 Olimpiade Sains Nasional 2025</h3>
+            <p style="margin:11px 0 0;font-size:13px;line-height:1.75;color:#6B7280">Tim olimpiade sains sekolah kembali mengukir prestasi di tingkat nasional setelah melewati seleksi ketat di lima provinsi.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid #EEF2F8">
+              <span style="font-size:12px;font-weight:500;color:#9AA4B2">15 Mei 2025</span>
+              <a href="#berita" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#0B5ED7">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article data-news data-reveal data-reveal-delay="150" style="background:#fff;border:1px solid #E9EFF8;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(8,45,110,.07);transition:transform .32s cubic-bezier(.22,.61,.36,1),box-shadow .32s" style-hover="transform:translateY(-8px);box-shadow:0 28px 54px rgba(8,45,110,.16)">
+          <div style="position:relative;height:212px;overflow:hidden;background:#DFE8F6">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)">
+              <image-slot id="news-2" shape="rect" placeholder="Foto berita 2"></image-slot>
+            </div>
+          </div>
+          <div style="padding:22px 22px 20px">
+            <span style="display:inline-flex;align-items:center;background:#0B5ED7;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.1em;padding:7px 12px;border-radius:8px">KEGIATAN SEKOLAH</span>
+            <h3 style="margin:15px 0 0;font-size:17px;line-height:1.42;font-weight:800;letter-spacing:-.015em;color:#1F2937;text-wrap:pretty">Kunjungan Industri ke Museum Nasional Indonesia</h3>
+            <p style="margin:11px 0 0;font-size:13px;line-height:1.75;color:#6B7280">Siswa kelas VIII belajar langsung sejarah dan budaya Nusantara melalui program pembelajaran di luar kelas.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid #EEF2F8">
+              <span style="font-size:12px;font-weight:500;color:#9AA4B2">10 Mei 2025</span>
+              <a href="#berita" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#0B5ED7">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article data-news data-reveal data-reveal-delay="240" style="background:#fff;border:1px solid #E9EFF8;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(8,45,110,.07);transition:transform .32s cubic-bezier(.22,.61,.36,1),box-shadow .32s" style-hover="transform:translateY(-8px);box-shadow:0 28px 54px rgba(8,45,110,.16)">
+          <div style="position:relative;height:212px;overflow:hidden;background:#DFE8F6">
+            <div data-zoom style="position:absolute;inset:0;transition:transform .6s cubic-bezier(.22,.61,.36,1)">
+              <image-slot id="news-3" shape="rect" placeholder="Foto berita 3"></image-slot>
+            </div>
+          </div>
+          <div style="padding:22px 22px 20px">
+            <span style="display:inline-flex;align-items:center;background:#0B5ED7;color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.1em;padding:7px 12px;border-radius:8px">PRESTASI</span>
+            <h3 style="margin:15px 0 0;font-size:17px;line-height:1.42;font-weight:800;letter-spacing:-.015em;color:#1F2937;text-wrap:pretty">Tim Robotik Labschool Borong 3 Penghargaan Internasional</h3>
+            <p style="margin:11px 0 0;font-size:13px;line-height:1.75;color:#6B7280">Prestasi diraih pada ajang kompetisi robotik yang diikuti oleh 24 negara dengan tema teknologi berkelanjutan.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid #EEF2F8">
+              <span style="font-size:12px;font-weight:500;color:#9AA4B2">5 Mei 2025</span>
+              <a href="#berita" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#0B5ED7">Baca Selengkapnya
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="aktivitas" data-section data-screen-label="Aktivitas dan Prestasi" style="scroll-margin-top:150px;padding:92px 0 0">
+    <div style="max-width:1224px;margin:0 auto;padding:0 32px">
+      <div data-reveal style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:26px">
+        <div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="width:28px;height:2.5px;background:#FFC83D;display:block;border-radius:2px"></span>
+            <span style="font-size:12.5px;font-weight:800;letter-spacing:.15em;color:#2F80ED">AKTIVITAS &amp; PRESTASI</span>
+          </div>
+          <h2 style="margin:12px 0 0;font-size:30px;font-weight:800;letter-spacing:-.025em;color:#1F2937">Aktivitas &amp; Prestasi</h2>
+        </div>
+        <div data-filters style="display:flex;align-items:center;gap:9px;flex-wrap:wrap">
+          <button type="button" data-filter="semua" style="background:#0B5ED7;color:#fff;border:1px solid #0B5ED7;font-size:12.5px;font-weight:700;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s;box-shadow:0 8px 18px rgba(11,94,215,.24)">Semua</button>
+          <button type="button" data-filter="akademik" style="background:#fff;color:#6B7280;border:1px solid #E4EBF6;font-size:12.5px;font-weight:600;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="color:#0B5ED7;border-color:#B9D0F5">Akademik</button>
+          <button type="button" data-filter="seni" style="background:#fff;color:#6B7280;border:1px solid #E4EBF6;font-size:12.5px;font-weight:600;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="color:#0B5ED7;border-color:#B9D0F5">Seni &amp; Budaya</button>
+          <button type="button" data-filter="olahraga" style="background:#fff;color:#6B7280;border:1px solid #E4EBF6;font-size:12.5px;font-weight:600;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="color:#0B5ED7;border-color:#B9D0F5">Olahraga</button>
+          <button type="button" data-filter="pramuka" style="background:#fff;color:#6B7280;border:1px solid #E4EBF6;font-size:12.5px;font-weight:600;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="color:#0B5ED7;border-color:#B9D0F5">Pramuka</button>
+          <button type="button" data-filter="sosial" style="background:#fff;color:#6B7280;border:1px solid #E4EBF6;font-size:12.5px;font-weight:600;padding:10px 19px;border-radius:999px;cursor:pointer;transition:all .25s" style-hover="color:#0B5ED7;border-color:#B9D0F5">Sosial</button>
+        </div>
+      </div>
+
+      <div data-gallery style="display:grid;grid-template-columns:repeat(12,1fr);gap:18px">
+        <figure data-gal data-cat="akademik" data-slot="gal-1" data-title="Praktikum Sains di Laboratorium" style="grid-column:span 3;margin:0;position:relative;height:206px;border-radius:18px;overflow:hidden;background:#DFE8F6;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;box-shadow:0 10px 26px rgba(8,45,110,.08)">
+          <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-1" shape="rect" placeholder="Praktikum sains"></image-slot></div>
+          <figcaption data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,0) 34%,rgba(6,32,74,.55) 62%,rgba(6,32,74,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px">
+            <div style="display:flex;align-items:center;gap:7px;color:#BFD8FF;font-size:10.5px;font-weight:800;letter-spacing:.12em;margin-bottom:7px">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="10.6" rx="2.2"></rect><path d="M8.2 21.5c0-2 1.7-3 3.8-3s3.8 1 3.8 3"></path></svg>AKADEMIK
+            </div>
+            <div style="font-size:14px;font-weight:800;color:#fff;line-height:1.4">Praktikum Sains di Laboratorium</div>
+            <button type="button" data-gal-zoom style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.36)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+            </button>
+          </figcaption>
+        </figure>
+        <figure data-gal data-cat="pramuka" data-slot="gal-2" data-title="Latihan Pramuka Mingguan" style="grid-column:span 3;margin:0;position:relative;height:206px;border-radius:18px;overflow:hidden;background:#DFE8F6;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;box-shadow:0 10px 26px rgba(8,45,110,.08)">
+          <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-2" shape="rect" placeholder="Kegiatan pramuka"></image-slot></div>
+          <figcaption data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,0) 34%,rgba(6,32,74,.55) 62%,rgba(6,32,74,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px">
+            <div style="color:#BFD8FF;font-size:10.5px;font-weight:800;letter-spacing:.12em;margin-bottom:7px">PRAMUKA</div>
+            <div style="font-size:14px;font-weight:800;color:#fff;line-height:1.4">Latihan Pramuka Mingguan</div>
+            <button type="button" data-gal-zoom style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.36)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+            </button>
+          </figcaption>
+        </figure>
+        <figure data-gal data-cat="olahraga" data-slot="gal-3" data-title="Turnamen Basket Antarkelas" style="grid-column:span 3;margin:0;position:relative;height:206px;border-radius:18px;overflow:hidden;background:#DFE8F6;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;box-shadow:0 10px 26px rgba(8,45,110,.08)">
+          <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-3" shape="rect" placeholder="Kegiatan olahraga"></image-slot></div>
+          <figcaption data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,0) 34%,rgba(6,32,74,.55) 62%,rgba(6,32,74,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px">
+            <div style="color:#BFD8FF;font-size:10.5px;font-weight:800;letter-spacing:.12em;margin-bottom:7px">OLAHRAGA</div>
+            <div style="font-size:14px;font-weight:800;color:#fff;line-height:1.4">Turnamen Basket Antarkelas</div>
+            <button type="button" data-gal-zoom style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.36)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+            </button>
+          </figcaption>
+        </figure>
+        <figure data-gal data-cat="seni" data-slot="gal-4" data-title="Pentas Seni Tari Tradisional" style="grid-column:span 3;margin:0;position:relative;height:206px;border-radius:18px;overflow:hidden;background:#DFE8F6;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;box-shadow:0 10px 26px rgba(8,45,110,.08)">
+          <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-4" shape="rect" placeholder="Pentas seni"></image-slot></div>
+          <figcaption data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,0) 34%,rgba(6,32,74,.55) 62%,rgba(6,32,74,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px">
+            <div style="color:#BFD8FF;font-size:10.5px;font-weight:800;letter-spacing:.12em;margin-bottom:7px">SENI &amp; BUDAYA</div>
+            <div style="font-size:14px;font-weight:800;color:#fff;line-height:1.4">Pentas Seni Tari Tradisional</div>
+            <button type="button" data-gal-zoom style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.36)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+            </button>
+          </figcaption>
+        </figure>
+        <figure data-gal data-cat="sosial" data-slot="gal-5" data-title="Kegiatan Bakti Sosial" style="grid-column:span 3;margin:0;position:relative;height:206px;border-radius:18px;overflow:hidden;background:#DFE8F6;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;box-shadow:0 10px 26px rgba(8,45,110,.08)">
+          <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-5" shape="rect" placeholder="Bakti sosial"></image-slot></div>
+          <figcaption data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,0) 34%,rgba(6,32,74,.55) 62%,rgba(6,32,74,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px">
+            <div style="color:#BFD8FF;font-size:10.5px;font-weight:800;letter-spacing:.12em;margin-bottom:7px">SOSIAL</div>
+            <div style="font-size:14px;font-weight:800;color:#fff;line-height:1.4">Kegiatan Bakti Sosial</div>
+            <button type="button" data-gal-zoom style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.36)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+            </button>
+          </figcaption>
+        </figure>
+        <figure data-gal data-cat="akademik" data-slot="gal-6" data-title="Juara 1 Kompetisi Robotik Nasional" data-badge="Juara 1" style="grid-column:span 4;margin:0;position:relative;height:206px;border-radius:18px;overflow:hidden;background:#DFE8F6;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;box-shadow:0 10px 26px rgba(8,45,110,.08)">
+          <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-6" shape="rect" placeholder="Penerimaan penghargaan"></image-slot></div>
+          <span style="position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:#FFC83D;color:#1F2937;font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:7px 11px;border-radius:8px;box-shadow:0 8px 18px rgba(255,200,61,.4)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 4h8v5.4a4 4 0 0 1-8 0V4Z"></path><path d="M12 13.4V17"></path><path d="M9 20.6h6"></path></svg>JUARA 1
+          </span>
+          <figcaption data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,0) 34%,rgba(6,32,74,.55) 62%,rgba(6,32,74,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px">
+            <div style="color:#BFD8FF;font-size:10.5px;font-weight:800;letter-spacing:.12em;margin-bottom:7px">PRESTASI &middot; AKADEMIK</div>
+            <div style="font-size:14px;font-weight:800;color:#fff;line-height:1.4">Juara 1 Kompetisi Robotik Nasional</div>
+            <button type="button" data-gal-zoom style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.36)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+            </button>
+          </figcaption>
+        </figure>
+        <figure data-gal data-cat="akademik" data-slot="gal-7" data-title="Literasi di Perpustakaan" style="grid-column:span 2;margin:0;position:relative;height:206px;border-radius:18px;overflow:hidden;background:#DFE8F6;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;box-shadow:0 10px 26px rgba(8,45,110,.08)">
+          <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-7" shape="rect" placeholder="Perpustakaan"></image-slot></div>
+          <figcaption data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,0) 34%,rgba(6,32,74,.55) 62%,rgba(6,32,74,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px">
+            <div style="color:#BFD8FF;font-size:10.5px;font-weight:800;letter-spacing:.12em;margin-bottom:7px">AKADEMIK</div>
+            <div style="font-size:14px;font-weight:800;color:#fff;line-height:1.4">Literasi di Perpustakaan</div>
+            <button type="button" data-gal-zoom style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.36)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+            </button>
+          </figcaption>
+        </figure>
+        <figure data-gal data-cat="akademik" data-slot="gal-8" data-title="International Mathematics Olympiad" data-badge="Medali Emas" style="grid-column:span 3;margin:0;position:relative;height:206px;border-radius:18px;overflow:hidden;background:#DFE8F6;transition:opacity .35s,transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s;box-shadow:0 10px 26px rgba(8,45,110,.08)">
+          <div data-gal-img style="position:absolute;inset:0;transition:transform .65s cubic-bezier(.22,.61,.36,1)"><image-slot id="gal-8" shape="rect" placeholder="Olimpiade internasional"></image-slot></div>
+          <span style="position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:6px;background:#FFC83D;color:#1F2937;font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:7px 11px;border-radius:8px;box-shadow:0 8px 18px rgba(255,200,61,.4)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 4h8v5.4a4 4 0 0 1-8 0V4Z"></path><path d="M12 13.4V17"></path><path d="M9 20.6h6"></path></svg>MEDALI EMAS
+          </span>
+          <figcaption data-gal-ov style="position:absolute;inset:0;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(180deg,rgba(6,32,74,0) 34%,rgba(6,32,74,.55) 62%,rgba(6,32,74,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px">
+            <div style="color:#BFD8FF;font-size:10.5px;font-weight:800;letter-spacing:.12em;margin-bottom:7px">PRESTASI &middot; INTERNASIONAL</div>
+            <div style="font-size:14px;font-weight:800;color:#fff;line-height:1.4">International Mathematics Olympiad</div>
+            <button type="button" data-gal-zoom style="position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:11px;border:1px solid rgba(255,255,255,.42);background:rgba(255,255,255,.2);backdrop-filter:blur(8px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:auto;transition:background .25s" style-hover="background:rgba(255,255,255,.36)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3.8H3.8V9"></path><path d="M15 3.8h5.2V9"></path><path d="M20.2 15v5.2H15"></path><path d="M9 20.2H3.8V15"></path></svg>
+            </button>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section data-section data-screen-label="CTA Pendaftaran" style="padding:88px 0 0">
+    <div style="max-width:1224px;margin:0 auto;padding:0 32px">
+      <div data-reveal style="position:relative;overflow:hidden;border-radius:24px;background:linear-gradient(103deg,#0B5ED7 0%,#0F63DC 42%,#2F80ED 100%);box-shadow:0 26px 56px rgba(11,94,215,.3);padding:38px 40px;display:flex;align-items:center;justify-content:space-between;gap:36px">
+        <div style="position:absolute;right:-40px;top:-70px;width:280px;height:280px;border-radius:999px;background:rgba(255,255,255,.08);pointer-events:none"></div>
+        <div style="position:absolute;right:150px;bottom:-110px;width:200px;height:200px;border-radius:999px;background:rgba(255,255,255,.06);pointer-events:none"></div>
+        <div style="display:flex;align-items:center;gap:24px;position:relative">
+          <span style="flex:none;width:74px;height:74px;border-radius:20px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);color:#FFC83D;display:flex;align-items:center;justify-content:center;animation:floatY 6s ease-in-out infinite">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 8.6 12 4.2l9.5 4.4L12 13 2.5 8.6Z"></path><path d="M6.6 10.7v4.1c0 1.9 2.4 3.2 5.4 3.2s5.4-1.3 5.4-3.2v-4.1"></path><path d="M20.4 9.4v5.2"></path></svg>
+          </span>
+          <div>
+            <h2 style="margin:0;font-size:31px;font-weight:800;letter-spacing:-.025em;color:#fff">Bergabung Bersama Kami</h2>
+            <p style="margin:9px 0 0;font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.86);max-width:520px">Wujudkan masa depan cerah bersama pendidikan terbaik di SMP Labschool Jakarta.</p>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;position:relative;flex:none">
+          <a href="#kontak" style="display:inline-flex;align-items:center;gap:9px;background:#FFC83D;color:#1F2937;font-size:14px;font-weight:700;padding:15px 26px;border-radius:13px;box-shadow:0 14px 28px rgba(6,32,74,.24);transition:transform .25s cubic-bezier(.22,.61,.36,1),box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 20px 38px rgba(6,32,74,.32);color:#1F2937">Daftar Sekarang
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 12h14"></path><path d="M13 6.5 18.5 12 13 17.5"></path></svg>
+          </a>
+          <a href="#kontak" style="display:inline-flex;align-items:center;gap:9px;color:#fff;font-size:14px;font-weight:700;padding:14px 24px;border-radius:13px;border:1.5px solid rgba(255,255,255,.5);transition:background .25s,transform .25s" style-hover="background:rgba(255,255,255,.16);transform:translateY(-3px);color:#fff">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" data-section data-screen-label="Kontak" style="scroll-margin-top:150px;padding:88px 0 96px">
+    <div style="max-width:1224px;margin:0 auto;padding:0 32px">
+      <div data-reveal style="margin-bottom:26px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:28px;height:2.5px;background:#FFC83D;display:block;border-radius:2px"></span>
+          <span style="font-size:12.5px;font-weight:800;letter-spacing:.15em;color:#2F80ED">KONTAK KAMI</span>
+        </div>
+        <h2 style="margin:12px 0 0;font-size:30px;font-weight:800;letter-spacing:-.025em;color:#1F2937">Kontak Kami</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:270px 1fr 372px;gap:28px;align-items:start">
+        <div data-reveal style="display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;gap:14px">
+            <span style="flex:none;width:42px;height:42px;border-radius:12px;background:#EDF3FF;color:#0B5ED7;display:flex;align-items:center;justify-content:center">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21.4s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"></path><circle cx="12" cy="10.3" r="2.6"></circle></svg>
+            </span>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:#1F2937">Alamat</div>
+              <p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#6B7280">Jl. Pemuda No.10, Rawamangun, Jakarta Timur, DKI Jakarta 13220</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px">
+            <span style="flex:none;width:42px;height:42px;border-radius:12px;background:#EDF3FF;color:#0B5ED7;display:flex;align-items:center;justify-content:center">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M6.2 3.6h3l1.5 4-2 1.4a11 11 0 0 0 5.3 5.3l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.2 5.8 2 2 0 0 1 6.2 3.6Z"></path></svg>
+            </span>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:#1F2937">Telepon</div>
+              <p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#6B7280">(021) 480 1525</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px">
+            <span style="flex:none;width:42px;height:42px;border-radius:12px;background:#EDF3FF;color:#0B5ED7;display:flex;align-items:center;justify-content:center">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><rect x="2.8" y="5" width="18.4" height="14" rx="2.4"></rect><path d="M3.5 7.3 12 13l8.5-5.7"></path></svg>
+            </span>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:#1F2937">Email</div>
+              <p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#6B7280">info@labschool-jkt.sch.id</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px">
+            <span style="flex:none;width:42px;height:42px;border-radius:12px;background:#EDF3FF;color:#0B5ED7;display:flex;align-items:center;justify-content:center">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="8.6"></circle><path d="M12 7.4V12l3.4 2.1"></path></svg>
+            </span>
+            <div>
+              <div style="font-size:14px;font-weight:800;color:#1F2937">Jam Operasional</div>
+              <p style="margin:5px 0 0;font-size:13px;line-height:1.7;color:#6B7280">Senin &ndash; Jumat: 07.00 &ndash; 15.30 WIB</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal data-reveal-delay="110" style="position:relative;height:296px;border-radius:20px;overflow:hidden;border:1px solid #E4EBF6;background:#E9EEF6;box-shadow:0 14px 34px rgba(8,45,110,.08)">
+          <image-slot id="map" shape="rect" placeholder="Tempel screenshot Google Maps di sini"></image-slot>
+          <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:7px;pointer-events:none">
+            <span style="display:inline-flex;align-items:center;gap:7px;background:#fff;color:#1F2937;font-size:11.5px;font-weight:700;padding:8px 12px;border-radius:9px;box-shadow:0 10px 22px rgba(8,45,110,.22)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E0322B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21.4s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"></path><circle cx="12" cy="10.3" r="2.4"></circle></svg>SMP Labschool Jakarta
+            </span>
+          </div>
+        </div>
+
+        <form data-contact-form onSubmit="{{ onSubmit }}" data-reveal data-reveal-delay="200" style="background:#fff;border:1px solid #E9EFF8;border-radius:22px;padding:26px 24px 24px;box-shadow:0 16px 38px rgba(8,45,110,.09)">
+          <h3 style="margin:0;font-size:18px;font-weight:800;letter-spacing:-.015em;color:#1F2937">Hubungi Kami</h3>
+          <p style="margin:7px 0 0;font-size:12.5px;line-height:1.65;color:#6B7280">Tim kami akan membalas pesan Anda pada hari kerja.</p>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px">
+            <input type="text" placeholder="Nama Lengkap" style="width:100%;box-sizing:border-box;background:#F7F9FC;border:1px solid #E4EBF6;border-radius:12px;padding:14px 15px;font-size:13.5px;color:#1F2937;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#2F80ED;box-shadow:0 0 0 4px rgba(47,128,237,.14);background:#fff" />
+            <input type="email" placeholder="Email" style="width:100%;box-sizing:border-box;background:#F7F9FC;border:1px solid #E4EBF6;border-radius:12px;padding:14px 15px;font-size:13.5px;color:#1F2937;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#2F80ED;box-shadow:0 0 0 4px rgba(47,128,237,.14);background:#fff" />
+            <input type="tel" placeholder="Nomor HP" style="width:100%;box-sizing:border-box;background:#F7F9FC;border:1px solid #E4EBF6;border-radius:12px;padding:14px 15px;font-size:13.5px;color:#1F2937;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#2F80ED;box-shadow:0 0 0 4px rgba(47,128,237,.14);background:#fff" />
+            <textarea rows="4" placeholder="Pesan Anda" style="width:100%;box-sizing:border-box;background:#F7F9FC;border:1px solid #E4EBF6;border-radius:12px;padding:14px 15px;font-size:13.5px;color:#1F2937;outline:none;resize:vertical;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#2F80ED;box-shadow:0 0 0 4px rgba(47,128,237,.14);background:#fff"></textarea>
+          </div>
+          <button type="submit" style="width:100%;margin-top:16px;display:inline-flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,#0B5ED7,#2F80ED);color:#fff;border:none;font-size:14px;font-weight:700;padding:15px 20px;border-radius:12px;cursor:pointer;box-shadow:0 12px 26px rgba(11,94,215,.28);transition:transform .25s cubic-bezier(.22,.61,.36,1),box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 18px 34px rgba(11,94,215,.38)">Kirim Pesan
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M21 4 3 11.2l6.6 2.2L12 21l9-17Z"></path><path d="M9.6 13.4 21 4"></path></svg>
+          </button>
+          <div ref="{{ statusRef }}" style="margin-top:12px;font-size:12.5px;font-weight:600;color:#0B5ED7;min-height:16px"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:linear-gradient(180deg,#0A2F6B 0%,#072754 100%);color:#fff">
+    <div style="max-width:1224px;margin:0 auto;padding:56px 32px 0">
+      <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1.35fr;gap:40px">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <image-slot id="footer-emblem" shape="circle" style="width:42px;height:42px;flex:none" placeholder="Logo"></image-slot>
+            <span style="display:flex;flex-direction:column;line-height:1.05">
+              <span style="font-size:15.5px;font-weight:800;color:#fff">SMP LABSCHOOL</span>
+              <span style="font-size:10px;font-weight:700;letter-spacing:.34em;color:rgba(255,255,255,.6);margin-top:3px">JAKARTA</span>
+            </span>
+          </div>
+          <p style="margin:20px 0 0;font-size:13px;line-height:1.8;color:rgba(255,255,255,.66);max-width:290px">SMP Labschool Jakarta berkomitmen untuk menciptakan lingkungan belajar yang inspiratif dan berkualitas bagi generasi masa depan.</p>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:22px">
+            <a href="#beranda" aria-label="Instagram" style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s" style-hover="background:#0B5ED7;transform:translateY(-3px);color:#fff">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.1" cy="6.9" r="1.15" fill="currentColor" stroke="none"></circle></svg>
+            </a>
+            <a href="#beranda" aria-label="YouTube" style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s" style-hover="background:#0B5ED7;transform:translateY(-3px);color:#fff">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.6 9.4l5.1 2.6-5.1 2.6V9.4Z" fill="currentColor" stroke="none"></path></svg>
+            </a>
+            <a href="#beranda" aria-label="Facebook" style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s" style-hover="background:#0B5ED7;transform:translateY(-3px);color:#fff">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M13.9 21v-7.6h2.6l.4-3h-3V8.6c0-.9.3-1.4 1.6-1.4h1.5V4.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8.2v3h2.4V21h3.3Z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 style="margin:0 0 18px;font-size:14px;font-weight:800;color:#fff;letter-spacing:.01em">Quick Links</h4>
+          <nav style="display:flex;flex-direction:column;gap:11px">
+            <a href="#beranda" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s,transform .2s" style-hover="color:#FFC83D">Beranda</a>
+            <a href="#tentang" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">Tentang</a>
+            <a href="#berita" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">Berita</a>
+            <a href="#aktivitas" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">Aktivitas &amp; Prestasi</a>
+            <a href="#kontak" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">Kontak</a>
+          </nav>
+        </div>
+        <div>
+          <h4 style="margin:0 0 18px;font-size:14px;font-weight:800;color:#fff;letter-spacing:.01em">Informasi</h4>
+          <nav style="display:flex;flex-direction:column;gap:11px">
+            <a href="#kontak" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">PPDB 2025/2026</a>
+            <a href="#kontak" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">Portal Orang Tua</a>
+            <a href="#kontak" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">E-Learning</a>
+            <a href="#kontak" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">Alumni</a>
+            <a href="#tentang" style="font-size:13px;color:rgba(255,255,255,.66);transition:color .2s" style-hover="color:#FFC83D">Kurikulum</a>
+          </nav>
+        </div>
+        <div>
+          <h4 style="margin:0 0 18px;font-size:14px;font-weight:800;color:#fff;letter-spacing:.01em">Kontak</h4>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;gap:11px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.66)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFC83D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style="flex:none;margin-top:3px"><path d="M12 21.4s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"></path><circle cx="12" cy="10.3" r="2.6"></circle></svg>
+              <span>Jl. Pemuda No.10, Rawamangun, Jakarta Timur, DKI Jakarta 13220</span>
+            </div>
+            <div style="display:flex;gap:11px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.66)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFC83D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style="flex:none;margin-top:3px"><path d="M6.2 3.6h3l1.5 4-2 1.4a11 11 0 0 0 5.3 5.3l1.4-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.2 5.8 2 2 0 0 1 6.2 3.6Z"></path></svg>
+              <span>(021) 480 1525</span>
+            </div>
+            <div style="display:flex;gap:11px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.66)">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFC83D" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style="flex:none;margin-top:3px"><rect x="2.8" y="5" width="18.4" height="14" rx="2.4"></rect><path d="M3.5 7.3 12 13l8.5-5.7"></path></svg>
+              <span>info@labschool-jkt.sch.id</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:44px;border-top:1px solid rgba(255,255,255,.12);padding:20px 0 22px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.52)">&copy; 2025 SMP Labschool Jakarta. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <div data-lightbox style="position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(5,20,48,.86);backdrop-filter:blur(6px);padding:48px">
+    <button type="button" data-lightbox-close style="position:absolute;top:26px;right:30px;width:44px;height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s" style-hover="background:rgba(255,255,255,.26)">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12"></path><path d="M18 6 6 18"></path></svg>
+    </button>
+    <figure style="margin:0;max-width:1020px;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px">
+      <img data-lightbox-img alt="" style="max-width:100%;max-height:74vh;border-radius:18px;display:none;box-shadow:0 30px 80px rgba(0,0,0,.5)" />
+      <div data-lightbox-empty style="display:none;width:100%;max-width:640px;aspect-ratio:16/10;border-radius:18px;border:1.5px dashed rgba(255,255,255,.34);color:rgba(255,255,255,.7);font-size:14px;align-items:center;justify-content:center;text-align:center;padding:24px">Foto belum diunggah. Tutup lightbox, lalu tarik foto ke kartu galeri untuk mengisinya.</div>
+      <figcaption data-lightbox-cap style="font-size:14.5px;font-weight:700;color:#fff;text-align:center"></figcaption>
+    </figure>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showUtilityBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Header&quot;},&quot;heroOverlay&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.94,&quot;min&quot;:0.3,&quot;max&quot;:1,&quot;step&quot;:0.02,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;sectionSpacing&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:90,&quot;min&quot;:56,&quot;max&quot;:160,&quot;step&quot;:2,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  statusRef = React.createRef();
+
+  renderVals() {
+    return {
+      showUtilityBar: this.props.showUtilityBar ?? true,
+      rootRef: this.rootRef,
+      statusRef: this.statusRef,
+      onSubmit: (e) => {
+        e.preventDefault();
+        const s = this.statusRef.current;
+        if (s) s.textContent = 'Terima kasih! Pesan Anda telah terkirim.';
+        try { e.target.reset(); } catch (_) {}
+      },
+    };
+  }
+
+  componentDidMount() { this.applyProps(); this.wire(); }
+  componentDidUpdate() { this.applyProps(); }
+  componentWillUnmount() { (this._cleanup || []).forEach((f) => f()); }
+
+  applyProps() {
+    const root = this.rootRef.current; if (!root) return;
+    const ov = root.querySelector('[data-hero-overlay]');
+    if (ov) ov.style.opacity = String(this.props.heroOverlay ?? 0.94);
+    const pad = this.props.sectionSpacing;
+    if (pad != null) {
+      root.querySelectorAll('[data-section]').forEach((s) => { s.style.paddingTop = pad + 'px'; });
+    }
+  }
+
+  wire() {
+    const root = this.rootRef.current; if (!root) return;
+    const off = (this._cleanup = []);
+    const on = (el, ev, fn, opt) => { el.addEventListener(ev, fn, opt); off.push(() => el.removeEventListener(ev, fn, opt)); };
+
+    // --- scroll reveal -------------------------------------------------
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    if (this.props.revealOnScroll !== false && 'IntersectionObserver' in window) {
+      items.forEach((el) => {
+        el.style.transition = 'opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1)';
+        if (el.getBoundingClientRect().top > window.innerHeight * 0.88) {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+        }
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const d = parseFloat(en.target.getAttribute('data-reveal-delay') || '0');
+          setTimeout(() => { en.target.style.opacity = '1'; en.target.style.transform = 'none'; }, d);
+          io.unobserve(en.target);
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      items.forEach((el) => io.observe(el));
+      off.push(() => io.disconnect());
+      const failsafe = setTimeout(() => items.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; }), 4000);
+      off.push(() => clearTimeout(failsafe));
+    } else {
+      items.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+    }
+
+    // --- header shadow + scroll spy -----------------------------------
+    const bar = root.querySelector('[data-nav-bar]');
+    const links = Array.from(root.querySelectorAll('[data-navlink]'));
+    const setActive = (id) => links.forEach((a) => {
+      const active = a.getAttribute('data-navlink') === id;
+      a.style.color = active ? '#0B5ED7' : '#1F2937';
+      a.style.backgroundSize = active ? '100% 2.5px' : '0% 2.5px';
+    });
+    const onScroll = () => {
+      const y = window.scrollY || 0;
+      if (bar) bar.style.boxShadow = y > 24 ? '0 10px 30px rgba(8,45,110,.10)' : 'none';
+      let current = 'beranda';
+      ['beranda', 'tentang', 'berita', 'aktivitas', 'kontak'].forEach((id) => {
+        const sec = root.querySelector('#' + id);
+        if (sec && sec.getBoundingClientRect().top <= 190) current = id;
+      });
+      setActive(current);
+    };
+    on(window, 'scroll', onScroll, { passive: true });
+    onScroll();
+
+    // --- hover: news thumbnail zoom -----------------------------------
+    root.querySelectorAll('[data-news]').forEach((card) => {
+      const z = card.querySelector('[data-zoom]');
+      if (!z) return;
+      on(card, 'mouseenter', () => { z.style.transform = 'scale(1.07)'; });
+      on(card, 'mouseleave', () => { z.style.transform = 'none'; });
+    });
+
+    // --- gallery hover + lightbox -------------------------------------
+    const lb = root.querySelector('[data-lightbox]');
+    const lbImg = root.querySelector('[data-lightbox-img]');
+    const lbEmpty = root.querySelector('[data-lightbox-empty]');
+    const lbCap = root.querySelector('[data-lightbox-cap]');
+    const closeLb = () => { if (lb) lb.style.display = 'none'; };
+    const openLb = (fig) => {
+      if (!lb) return;
+      const slot = fig.querySelector('image-slot');
+      let src = '';
+      try { src = (slot && slot.shadowRoot && slot.shadowRoot.querySelector('.frame img') || {}).src || ''; } catch (_) {}
+      const filled = !!src && slot.hasAttribute('data-filled');
+      if (lbImg) { lbImg.style.display = filled ? 'block' : 'none'; if (filled) lbImg.src = src; }
+      if (lbEmpty) lbEmpty.style.display = filled ? 'none' : 'flex';
+      if (lbCap) lbCap.textContent = fig.getAttribute('data-title') || '';
+      lb.style.display = 'flex';
+    };
+    root.querySelectorAll('[data-gal]').forEach((fig) => {
+      const ov = fig.querySelector('[data-gal-ov]');
+      const img = fig.querySelector('[data-gal-img]');
+      on(fig, 'mouseenter', () => {
+        if (ov) ov.style.opacity = '1';
+        if (img) img.style.transform = 'scale(1.08)';
+        fig.style.boxShadow = '0 22px 44px rgba(8,45,110,.2)';
+      });
+      on(fig, 'mouseleave', () => {
+        if (ov) ov.style.opacity = '0';
+        if (img) img.style.transform = 'none';
+        fig.style.boxShadow = '0 10px 26px rgba(8,45,110,.08)';
+      });
+      const btn = fig.querySelector('[data-gal-zoom]');
+      if (btn) on(btn, 'click', (e) => { e.stopPropagation(); e.preventDefault(); openLb(fig); });
+    });
+    const lbClose = root.querySelector('[data-lightbox-close]');
+    if (lbClose) on(lbClose, 'click', closeLb);
+    if (lb) on(lb, 'click', (e) => { if (e.target === lb) closeLb(); });
+    on(document, 'keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+    // --- gallery filter ------------------------------------------------
+    const pills = Array.from(root.querySelectorAll('[data-filter]'));
+    const figs = Array.from(root.querySelectorAll('[data-gal]'));
+    pills.forEach((p) => on(p, 'click', () => {
+      const cat = p.getAttribute('data-filter');
+      pills.forEach((q) => {
+        const active = q === p;
+        q.style.background = active ? '#0B5ED7' : '#fff';
+        q.style.color = active ? '#fff' : '#6B7280';
+        q.style.borderColor = active ? '#0B5ED7' : '#E4EBF6';
+        q.style.fontWeight = active ? '700' : '600';
+        q.style.boxShadow = active ? '0 8px 18px rgba(11,94,215,.24)' : 'none';
+      });
+      figs.forEach((f) => {
+        const show = cat === 'semua' || f.getAttribute('data-cat') === cat;
+        if (show) {
+          f.style.display = '';
+          requestAnimationFrame(() => { f.style.opacity = '1'; f.style.transform = 'none'; });
+        } else {
+          f.style.opacity = '0';
+          f.style.transform = 'scale(.96)';
+          setTimeout(() => { if (f.style.opacity === '0') f.style.display = 'none'; }, 320);
+        }
+      });
+    }));
+  }
+}
+
+</script>
+</body>
+</html>
